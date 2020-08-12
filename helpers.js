@@ -18,6 +18,7 @@ const arrayValidator = vals => {
 }
 
 const mean = vals => {
+    if (vals.length === 0) return 0;
     total = 0;
     for (let i = 0; i < vals.length; i++) {
         total += vals[i];
@@ -54,7 +55,7 @@ const mode = vals => {
     }
 
     // Make a new, sorted array of key values only.
-    return most.map(set => set[0]).sort((a, b) => a - b);
+    return most.map(set => parseInt(set[0])).sort((a, b) => a - b);
 }
 
 module.exports = {
